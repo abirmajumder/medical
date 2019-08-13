@@ -9,6 +9,7 @@ import org.springframework.batch.core.repository.JobExecutionAlreadyRunningExcep
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,6 +21,7 @@ public class StarterJob {
     @Autowired
     Job job;
 	
+    @Scheduled(fixedRate = 5000)
 	public void perform() {
 		JobParameters params = new JobParametersBuilder()
         							.addString("JobID", String.valueOf(System.currentTimeMillis()))

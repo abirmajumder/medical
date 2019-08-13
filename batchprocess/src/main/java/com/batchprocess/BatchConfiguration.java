@@ -58,7 +58,7 @@ public class BatchConfiguration {
             .dataSource(dataSource)
             .build();
     }
-    // end::readerwriterprocessor[]
+    // end::readerwriterprocessor []
 
     // tag::jobstep[]
     @Bean

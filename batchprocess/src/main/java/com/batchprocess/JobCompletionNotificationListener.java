@@ -20,7 +20,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 	public JobCompletionNotificationListener(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-	
+	 
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
 		jobExecution.getJobParameters().getParameters().forEach( (k,v) -> System.out.println( k + " - " + v.toString() ) );
